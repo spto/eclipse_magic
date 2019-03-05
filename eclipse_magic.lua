@@ -88,7 +88,7 @@ LoggingFile = nil
 --
 -- Set the 4 contact times here.  Time zone is irrelevant, as long as your camera and these
 -- times are the same.  Make sure the times are correct for your location, and that your camera
--- is accurately set to GPS time.
+-- is accurately set to GPS time. (Only interger numbers are accepted!)
 --
 if ( TestBeepNoShutter == 0 )
 then
