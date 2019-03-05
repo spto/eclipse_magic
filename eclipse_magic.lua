@@ -90,7 +90,7 @@ LoggingFile = nil
 -- times are the same.  Make sure the times are correct for your location, and that your camera
 -- is accurately set to GPS time.
 --
-if ( TestBeepNoShutter == 1 )
+if ( TestBeepNoShutter == 0 )
 then
 	-- Esterbrook: 10:23:32 11:44:37 11:46:53 13:11:42
 	c1.hr = 10; c1.min = 23; c1.sec = 32
@@ -150,7 +150,7 @@ ConsoleShowDelay = 30
 -- locked up, and eliminates the vibration from the shutter opening) there will be slight 
 -- vibrations introduced as the shutter closes.  According to Jerry Lodriguss at
 -- http://www.astropix.com/wp/2017/07/17/mirror-slap-and-shutter-shock/ these vibrations
--- are most prominent between 0.125s and 2s, and can be somewhat mitigated by a slight 
+-- are most prominent between 1/125s and 2s, and can be somewhat mitigated by a slight 
 -- delay before exposure, to allow the vibration to dampen a bit.
 --
 -- Enabling this option lets you set a range of shutter speeds to delay before, and 
@@ -158,7 +158,7 @@ ConsoleShowDelay = 30
 --
 DoShutterShockDelay = 1
 SlowestDelayedShutter = 2
-FastestDelayedShutter = (1/8)
+FastestDelayedShutter = (1/125)
 ShutterShockDelayMS = 300		-- Value is in milliseconds!
 
 
