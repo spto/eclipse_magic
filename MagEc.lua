@@ -711,7 +711,7 @@ function do_partial (start_phase, stop_phase, which_partial)
 	repeat
 	
 		log ("%s Partial: %d/%d  Interval: %d s  Remaining: %d",
-			which_partial, exposure_count, PartialExposureCount, image_interval, stop_phase - get_cur_secs())
+			which_partial, exposure_count+1, PartialExposureCount, image_interval, stop_phase - get_cur_secs())
 		if (get_cur_secs() <= image_time)
 		then
 		
@@ -1156,3 +1156,8 @@ main() -- Run the program.
 		-- opportunity to stop shooting at a specific time, where a burst will run until the requested
 		-- number of images have been captured.
 
+-- 1.7.1 by Boyang Liu
+	-- Fixed partial exposure count number (now starting from 1, not from 0)
+	-- Changed the filename, so it won't be too long to load (magiclantern-lua_fix.2018Dec23.6D116 does not allow long filename)
+	-- Fixed the "TestBeepNoShutter == 1" into "TestBeepNoShutter == 0". Now testing is really testing, no confuse.
+	-- Added warning information in script comment: "Only interger numbers are accepted!"
