@@ -815,7 +815,7 @@ function do_c2max()
 		print("********************************************************")
 		print()		
 		
-		do_beep()
+		--do_beep()
 		
 	end
 	
@@ -946,7 +946,7 @@ function do_maxc3()
 		print("********************************************************")
 		print()
 		
-		do_beep()
+		--do_beep()
 			
 	end
 	
@@ -1172,3 +1172,4 @@ main() -- Run the program.
 	-- Added warning information in script comment: "Only interger numbers are accepted!"
 	-- Added ForceLiveView parameter to ensure the mirror is up.
 	-- Replaced task.yield(ShutterShockDelayMS) with msleep(ShutterShockDelayMS) to ensure the shaking caused by mirror motion is damped.
+	-- Revomed post-C2 and pre-C3 warning beep
