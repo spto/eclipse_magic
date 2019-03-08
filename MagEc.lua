@@ -4,11 +4,11 @@
 
 -- Eclipse Magic
 --
--- Version 1.7.0
+-- Version 1.7.1
 --
 -- Copyright 2017 by Brian Greenberg, grnbrg@grnbrg.org.
 -- Distributed under the GNU General Public License.
---
+-- Modified by Boyang Liu in 2019.
 --
 -- ***************************************************************************************************
 -- ***************************************************************************************************
