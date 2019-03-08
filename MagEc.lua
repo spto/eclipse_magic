@@ -130,6 +130,10 @@ Aperture = 5
 --
 WarnLiveView = 0
 
+--
+-- Set this variable to 1 will force the camera to go to LV mode before each shot.
+--
+ForceLiveView = 1
 
 --
 -- If you're shooting in Live View (to reduce mirror slap) you'll probably still want to check
@@ -463,6 +467,11 @@ end
 --
 function take_shot(iso, shutter_speed, dobkt, bktstep, bktcount)
 
+	if (ForceLiveView == 1)
+	then
+		lv.start()
+	end
+	
 	local bktspeed = 0.0
 	
 	if ((lv.enabled == true) and (WarnLiveView == 1))
@@ -493,7 +502,7 @@ function take_shot(iso, shutter_speed, dobkt, bktstep, bktcount)
 				<= SlowestDelayedShutter))
 			then
 				
-				task.yield(ShutterShockDelayMS)
+				msleep(ShutterShockDelayMS)
 					
 			end
 				
@@ -531,7 +540,7 @@ function take_shot(iso, shutter_speed, dobkt, bktstep, bktcount)
 					<= SlowestDelayedShutter))
 				then
 				
-					task.yield(ShutterShockDelayMS)
+					msleep(ShutterShockDelayMS)
 					
 				end
 				
@@ -1161,3 +1170,5 @@ main() -- Run the program.
 	-- Changed the filename, so it won't be too long to load (magiclantern-lua_fix.2018Dec23.6D116 does not allow long filename)
 	-- Fixed the "TestBeepNoShutter == 1" into "TestBeepNoShutter == 0". Now testing is really testing, no confuse.
 	-- Added warning information in script comment: "Only interger numbers are accepted!"
+	-- Added ForceLiveView parameter to ensure the mirror is up.
+	-- Replaced task.yield(ShutterShockDelayMS) with msleep(ShutterShockDelayMS) to ensure the shaking caused by mirror motion is damped.
